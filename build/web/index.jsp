@@ -160,9 +160,11 @@
                     //CHECKS IF ELEMNT GOT FROM DOCUMENT IS APPLICABLE
                     if (stringContainsItemFromList(text, keys)) {
                         if (URL.contains(".mp4") || URL.contains(".mkv") || URL.contains(".avi")) {
-                            //long size = new URL(URL).openConnection().getContentLength();
-                            //long size = getFileSize(new URL(URL));
-                            files.add(new SearchResults(text, URL));
+                            if (!URL.contains("archive.org")) {
+                                //long size = new URL(URL).openConnection().getContentLength();
+                                //long size = getFileSize(new URL(URL));
+                                files.add(new SearchResults(text, URL));
+                            }
                         }
                     }
                 }
